@@ -1,4 +1,4 @@
-# ronchi
+# Ronchi
 Optical Ronchi test
 
 
