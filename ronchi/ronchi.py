@@ -2,7 +2,6 @@
 import math
 import numpy as np
 
-
 EPSILON = 0.0001
 
 class Ronchigram:
