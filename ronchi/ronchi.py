@@ -1,6 +1,5 @@
 # class generating ronchigram
 import math
-import numpy as np
 
 EPSILON = 0.0001
 
@@ -29,8 +28,7 @@ class Ronchigram:
     def generate_ronchigram(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
         if self.ac_mode:
             conicity = 2*conicity + 1
-        ronchigram = np.ones((2*self.resolution, 2*self.resolution))
-        # ronchigram = [[0]*(2*self.resolution)]*(2*self.resolution)
+        ronchigram = [[1 for x in range(2*self.resolution)] for y in range(2*self.resolution)]
         W = 1 / (2 * grating_lines)
         for i in range(0, 2*self.resolution):
             for j in range(0, 2*self.resolution):
