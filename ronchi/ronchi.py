@@ -25,7 +25,7 @@ class Ronchigram:
         b_fX = (S1 + S2)/2 - a_fX * (r + 0.5*EPSILON)
         return b_fX, b_pX
             
-    def generate_ronchigram(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
+    def generate_ronchigram_at_focus(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
         if self.ac_mode:
             conicity = 2*conicity + 1
         ronchigram = [[1 for x in range(2*self.resolution)] for y in range(2*self.resolution)]
@@ -47,6 +47,12 @@ class Ronchigram:
                     if FL != 0:
                         ronchigram[j][i] = 0
         return ronchigram
+    
+    def generate_ronchigram_at_roc(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
+        pass
+      
+    def wavefront_error_calculation(self, wavelength, roc, diameter, conicity):
+        pass
         
           
     
