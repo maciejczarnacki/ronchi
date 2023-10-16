@@ -23,7 +23,7 @@ class Ronchigram:
         angle_fX = math.atan(a_pX) + angleX
         a_fX = math.tan(angle_fX)
         b_fX = (S1 + S2)/2 - a_fX * (r + 0.5*EPSILON)
-        return (round(b_pX,5)), (round(b_fX,5))
+        return b_fX, b_pX
             
     def generate_ronchigram(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
         if self.ac_mode:
@@ -38,7 +38,7 @@ class Ronchigram:
                 if math.sqrt(S2) < diameter / 2:
                     SAG = self.sagitta(X, roc, conicity)
                     r_and_f = self.focus_and_radii(S2**0.5, roc, conicity)
-                    actual_focus = r_and_f[1]
+                    actual_focus = r_and_f[0]
                     U = X * (delta + roc/2 - actual_focus)/(actual_focus - SAG)
                     FL = 0
                     si = (math.sin(math.pi * U * grating_lines - ronchi_phase))**2
