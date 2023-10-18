@@ -1,0 +1,32 @@
+
+y = ax + b
+
+(ROC + delta) = 0 + b
+
+b = ROC + delta
+
+S(x) = ax + ROC + delta
+ax = S(x) - (ROC + delta)
+
+a = (S(x) - ROC - delta)/x
+
+an angle between primary ray and normal line to the mirror surface:
+
+angle_1 = atan((S - ROC - delta)/x)
+angle_normal = alpha
+beta = alpha - (angle_1 - alpha)
+beta = 2*alpha - angle_1
+
+a' = tan(beta)
+
+S(x) = a'x + b'
+b' = s(x) - x*tan(beta)
+
+
+wyznaczanie kąta alpha
+
+y = a*x + b
+
+S = a*r + focus_and_radii_infinity[1]
+a = (S - focus_and_radii_infinity[1])/r
+
