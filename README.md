@@ -1,6 +1,13 @@
 # Ronchi
 Optical Ronchi test
 
+![Ronchigram of the spherical mirror seen from the radius of curvature](/images/Sphere_at_roc.png)
+
+![Ronchigram of the spherical mirror seen from the focus](/images/Sphere_at_focus.png)
+
+![Ronchigram of the spherical mirror seen from the focus in autocollimation mode](/images/Sphere_at_focus_autocollimation_mode.png)
+
+![Ronchi grating used as a knife edge in Foucault test at the radius of curvature - Parabolic mirror](/images/Parabola_at_roc_ronchi_as_knife_edge.png)
 
 
 ## References
