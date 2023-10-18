@@ -7,7 +7,7 @@ diameter - mirror diameter in mm
 conic - mirror conic constant / conicity
 grating_lines - ronchi grating parameter - lines per mm
 ronchi_phase - vertical shift of ronchi grating expressed as a phase shift of sine function 0 - Pi
-delta - distant of ronchi grating from paraxial focus / radius of curvature in mm 
+delta - distance of ronchi grating from paraxial focus / radius of curvature in mm 
 """
 import matplotlib.pyplot as plt
 from ronchi import ronchi
