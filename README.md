@@ -12,7 +12,7 @@ Astigmatism and coma are also visible. However, the latter aberrations are less 
 The test is qualitative, not quantitative. This means that we cannot use it to easily and clearly calculate/estimate the value of the wavefront error as peak to valey error, rms or Strehl coefficient. The author of this repository has created a program for comparative analysis of actual measurement and simulation, 
 and thus an attempt to estimate the values described above.
 
-The repository in the form of a python module allows you to generate Ronchi test simulation images in all mentioned systems. Below are sample images (ronchigrams) generated with this program.
+The repository in the form of a python module allows you to generate Ronchi test simulation images in all mentioned systems. Below are sample images (ronchigrams) generated with this program. The description of the class parameters and methods are included in the program code as comments.
 
 In order to expand your knowledge about the Ronchi test, I invite you to read the websites and materials listed in the references at the bottom of the page.
 
