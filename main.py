@@ -1,10 +1,10 @@
 """ 
-Ronchi test simulator for concave mirrors and telescopes
+Ronchi test simulator for concave mirrors
 
 Parameters description:
 roc - radius of curvature in mm
 diameter - mirror diameter in mm
-conic - mirror conic constant / conisity
+conic - mirror conic constant / conicity
 grating_lines - ronchi grating parameter - lines per mm
 ronchi_phase - vertical shift of ronchi grating expressed as a phase shift of sine function 0 - Pi
 delta - distant of ronchi grating from paraxial focus / radius of curvature in mm 
