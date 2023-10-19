@@ -37,6 +37,8 @@ Ronchi grating used as a knife edge in Foucault test at the radius of curvature 
 - [Wikipedia about Ronchi test](https://en.wikipedia.org/wiki/Ronchi_test)
 - [A brilliant source of knowledge about telescope optics, chapter on the Ronchi test](https://www.telescope-optics.net/ronchi_test.htm)
 - [Step by step explanation of the Ronchi test](https://www.atm-workshop.com/ronchi-test.html)
+- [Article about Ronchi test simulation](http://www.atm-workshop.com/ronchi-sim.html)
+- [Article about ronchigram interpretation](https://stellafane.org/tm/atm/test/ronchigrams.html)
 - [One of the best Ronchi test simulator for mirror makers](https://www.bbastrodesigns.com/ronchi.html)
 - [Discussion about the Ronchi test in autocollimation mode simulation on the Cloudy Nights forum](https://www.cloudynights.com/topic/812098-dpac-test-simulation-comparison/?hl=aos)
 - My Ronchi Test Simulator (AOS) written in C# - https://maciejczarnacki.github.io/AOS/
