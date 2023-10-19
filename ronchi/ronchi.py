@@ -4,7 +4,7 @@ import math
 EPSILON = 0.0001
 
 class Ronchigram:
-    def __init__(self, ac_mode = False, resolution = 300):
+    def __init__(self, ac_mode = False, resolution = 500):
         self.resolution = resolution
         self.ac_mode = ac_mode
         
@@ -28,12 +28,12 @@ class Ronchigram:
     def generate_ronchigram_at_focus(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
         if self.ac_mode:
             conicity = 2 * conicity + 1
-        ronchigram = [[1 for x in range(2 * self.resolution)] for y in range(2 * self.resolution)]
+        ronchigram = [[1 for x in range(self.resolution)] for y in range(self.resolution)]
         W = 1/(2 * grating_lines)
-        for i in range(2 * self.resolution):
-            for j in range(2 * self.resolution):
-                X = (i - self.resolution) * diameter / (2 * self.resolution)
-                Y = (j - self.resolution) * diameter / (2 * self.resolution)
+        for i in range(self.resolution):
+            for j in range(self.resolution):
+                X = (i - self.resolution / 2) * diameter / self.resolution
+                Y = (j - self.resolution / 2) * diameter / self.resolution
                 S2 = X*X + Y*Y
                 if math.sqrt(S2) < diameter / 2:
                     SAG = self.sagitta(X, roc, conicity)
@@ -49,12 +49,12 @@ class Ronchigram:
         return ronchigram
     
     def generate_ronchigram_at_roc(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
-        ronchigram = [[1 for x in range(2*self.resolution)] for y in range(2*self.resolution)]
+        ronchigram = [[1 for x in range(self.resolution)] for y in range(self.resolution)]
         W = 1/(2 * grating_lines)
-        for i in range(2 * self.resolution):
-            for j in range(2 * self.resolution):
-                X = (i - self.resolution) * diameter / (2*self.resolution)
-                Y = (j - self.resolution) * diameter / (2*self.resolution)
+        for i in range(self.resolution):
+            for j in range(self.resolution):
+                X = (i - self.resolution / 2) * diameter / self.resolution
+                Y = (j - self.resolution / 2) * diameter / self.resolution
                 S2 = X*X + Y*Y
                 if math.sqrt(S2) < diameter / 2:
                     Z = roc + S2/roc * (-1) * conicity

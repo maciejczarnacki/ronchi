@@ -15,14 +15,14 @@ from ronchi import ronchi
 roc = 1200
 diameter = 150
 conic = -1
-grating_lines = 0.5
-ronchi_phase = -3.14/4
-delta = 0.25
+grating_lines = 5
+ronchi_phase = 0
+delta = 5
 wavelength = 550
 
 def main():
-    my_ronchigram = ronchi.Ronchigram(ac_mode=False, resolution=300)
-    # image_matrix = my_ronchigram.generate_ronchigram_at_focus(roc, diameter, conic, grating_lines, ronchi_phase, delta)
+    my_ronchigram = ronchi.Ronchigram(ac_mode=False)
+    #image_matrix = my_ronchigram.generate_ronchigram_at_focus(roc, diameter, conic, grating_lines, ronchi_phase, delta)
     image_matrix = my_ronchigram.generate_ronchigram_at_roc(roc, diameter, conic, grating_lines, ronchi_phase, delta)
     print("Wavefront error at focus: ", my_ronchigram.wavefront_error_calculation_at_focus(wavelength, roc, diameter, conic))
     print("Wavefront error at radius od curvature: ", my_ronchigram.wavefront_error_calculation_at_roc(wavelength, roc, diameter, conic))
