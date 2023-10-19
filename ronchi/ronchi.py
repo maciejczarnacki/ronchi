@@ -4,14 +4,18 @@ import math
 EPSILON = 0.0001
 
 class Ronchigram:
+    # resolution - is a parameter defining size of the ronchigram, default value is 500, this give us image of 500x500 pixel size
     def __init__(self, ac_mode = False, resolution = 500):
         self.resolution = resolution
         self.ac_mode = ac_mode
-        
+    
+    # sagitta function is used for concave mirror surface generation (conic section)     
     def sagitta(self, r, radius_of_curvature, conicity):
         S = r**2/(radius_of_curvature * (1 + (1 - r**2/radius_of_curvature**2 * (conicity + 1))**0.5))
         return S
 
+    # focus_and radii methode calculates focal point and radius of curvatore for any given mirror surface point
+    # it is necessary in raytracing and ronchigram generation
     def focus_and_radii_infinity(self, r, radius, conicity):
         S1 = self.sagitta(r, radius, conicity)
         S2 = self.sagitta(r + EPSILON, radius, conicity)
@@ -24,7 +28,8 @@ class Ronchigram:
         a_fX = math.tan(angle_fX)
         b_fX = (S1 + S2)/2 - a_fX * (r + 0.5 * EPSILON)
         return b_fX, b_pX
-            
+    
+    # methode generating of the ronchigram in at focus Ronchi test        
     def generate_ronchigram_at_focus(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
         if self.ac_mode:
             conicity = 2 * conicity + 1
@@ -48,6 +53,7 @@ class Ronchigram:
                         ronchigram[j][i] = 0
         return ronchigram
     
+    #methode generating of the ronchigram in at center of curvature (or "roc") Ronchi test
     def generate_ronchigram_at_roc(self, roc, diameter, conicity, grating_lines, ronchi_phase, delta):
         ronchigram = [[1 for x in range(self.resolution)] for y in range(self.resolution)]
         W = 1/(2 * grating_lines)
@@ -67,13 +73,15 @@ class Ronchigram:
                     if FL != 0:
                         ronchigram[j][i] = 0
         return ronchigram
-          
+    
+    # wavefront error calculation from OPD equation for at focus test      
     def wavefront_error_calculation_at_focus(self, wavelength, roc, diameter, conicity):
         p_v = abs(1 + conicity)*diameter**4 / 256 / roc**3 / (wavelength * 10**(-6))
         rms = p_v / 3.51
         strehl = (1 - 2 * math.pi**2 * rms * rms)**2
         return round(p_v, 3), round(rms, 3), round(strehl, 3)
     
+    # wavefront error calculation from OPD equation for at "roc" test
     def wavefront_error_calculation_at_roc(self, wavelength, roc, diameter, conicity):
         p_v = abs(conicity) * diameter**4 / 256 / roc**3 / (wavelength * 10**(-6))
         rms = p_v / 3.51
