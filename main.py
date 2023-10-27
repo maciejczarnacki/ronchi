@@ -10,7 +10,7 @@ ronchi_phase - vertical shift of ronchi grating expressed as a phase shift of si
 delta - distance of ronchi grating from paraxial focus / radius of curvature in mm 
 """
 import matplotlib.pyplot as plt
-from ronchi import ronchi
+from ronchi import Ronchigram
 
 roc = 1200
 diameter = 150
@@ -21,7 +21,7 @@ delta = 5
 wavelength = 550
 
 def main():
-    my_ronchigram = ronchi.Ronchigram(ac_mode=False)
+    my_ronchigram = Ronchigram(ac_mode=False)
     #image_matrix = my_ronchigram.generate_ronchigram_at_focus(roc, diameter, conic, grating_lines, ronchi_phase, delta)
     image_matrix = my_ronchigram.generate_ronchigram_at_roc(roc, diameter, conic, grating_lines, ronchi_phase, delta)
     print("Wavefront error at focus: ", my_ronchigram.wavefront_error_calculation_at_focus(wavelength, roc, diameter, conic))
